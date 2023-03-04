@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "HorizontalForm";
+}
+
+<h2>HorizontalForm</h2>
+
+<hr />
+<form class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-sm-4">Enter Name</label>
+        <input type="text" class="form-control col-sm-8"/>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-4">Enter Address</label>
+        <textarea class="form-control col-sm-8" rows="3" cols="25"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-4">Gender</label>
+        <div class="col-sm-8">
+            <div class="radio">
+                <input type="radio" value="m"/> Male
+            </div>
+            <div class="radio">
+                <input type="radio" value="f"/> Female
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-4">Languages known</label>
+        <div class="col-sm-8">
+            <div class="checkbox-inline">
+                <input type="checkbox" value="h"/>Hindi
+            </div>
+            <div class="checkbox-inline">
+                <input type="checkbox" value="m"/>Telugu
+            </div>
+            <div class="checkbox-inline">
+                <input type="checkbox" value="e"/>English
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-4">Select City</label>
+        <select class="form-control col-sm-8">
+            <option value="d">Delhi</option>
+            <option value="m">Mumbai</option>
+            <option value="h">Hyderabad</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-danger btn-lg col-sm-offset-4" value="Register"/>
+    </div>
+</form>

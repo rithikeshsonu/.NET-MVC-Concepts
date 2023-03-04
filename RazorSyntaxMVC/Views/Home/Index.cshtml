@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@{
+    string msg = "Hello,<b> world!</b>"; //HTML encoding -> displays tags in output
+    string myVar = "DateTime"; //To display current date, DateTime.Now is used
+    string[] colors = { "red", "blue", "green" };
+    string[] fruits = { "apple", "banana", "orange" };
+}
+@*Declaring and defining a Function*@ 
+@helper showList(string[] list) { 
+    <ul>
+        @foreach(string s in list)
+    {
+        <li>@s</li>
+    }
+    </ul>    
+}
+<h2>Razor Syntax</h2>
+
+<br />
+@*Implicit code*@
+Today is @DateTime.Now.ToShortDateString()
+<br />
+@msg
+<br />
+@*Explicit code*@
+Multiplication of 34 * 32 is @(34*32)
+<br />
+
+To display current date: @(myVar).Now is used
+<br />
+@*               Escaping code delimeter -  @         *@
+ Meet me @@ 7PM @*prints @ in output *@
+<br />
+@*@ symbol works if it's between text already*@
+My email address is rith@gmai.com
+<br />
+
+@*If else*@
+@if (DateTime.IsLeapYear(2018))
+{
+    @*<b>Leap Year</b>*@
+    @*@: Leap Year*@
+    //Directing From HTML to C#, we use @ and from C# to HTML, we use "@:"
+    <text>Leap Year </text>
+}
+else
+{
+    @*<b>Not a leap year</b>*@
+    <text>Not a leap year</text>
+    @:Not a leap year @* This @: can be used to display plain text in C# code*@
+}
+<br />
+@*<ul>
+    @foreach (string c in colors)
+    {
+        <li>@c</li>
+    }
+</ul>*@
+
+@showList(colors)
+
+
+@Html.Raw(msg) @*This prevents cross side scripting*@
+
+@showList(fruits)

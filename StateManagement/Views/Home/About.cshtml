@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "About";
+    //ChildActionOnlyAttribute keeps the language attribute after  a refresh
+    TempData.Keep("language");
+}
+
+<h1>Welcome @Session["username"]</h1>
+
+<h2>About</h2>
+
+<h3>Temp Data</h3>
+
+Language is <b>@TempData["language"]</b>
+<br />
+Age is <b>@TempData["age"]</b>
+<br />
+Computer knowledge is <b>@TempData["computer"]</b>
+<br />
+
+@ViewBag.msg

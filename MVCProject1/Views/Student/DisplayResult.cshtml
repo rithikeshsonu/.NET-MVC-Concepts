@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "DisplayResult";
+    int sum;
+    float percentage;
+    sum = Convert.ToInt32(TempData["theory"]) + Convert.ToInt32(TempData["practical"]) + Convert.ToInt32(TempData["oral"]);
+    percentage = sum / 3.0f;
+}
+
+<h2>DisplayResult</h2>
+
+Student name is @TempData.Peek("sname") <br />
+Address is @TempData.Peek("address") <br />
+<!--If you want to preserve data, peek read it-->
+<table border="1">
+    <tr>
+        <td>Theory </td>
+        <td>@TempData.Peek("Theory")</td>
+    </tr>
+    <tr>
+        <td>Practical</td>
+        <td>@TempData["Practical"]</td>
+    </tr>
+    <tr>
+        <td>Oral</td>
+        <td>@TempData["Oral"]</td>
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td>@sum</td>
+    </tr>
+    <tr>
+        <td>Percentage</td>
+        <td>@percentage</td>
+    </tr>
+</table>

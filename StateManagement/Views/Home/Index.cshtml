@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    //if we want to keep the TempData data, we must preserve it using Keep();
+    TempData.Keep();
+
+}
+
+<h1>Welcome @Session["username"]</h1>
+
+<h2>State Management</h2>
+<br />
+
+@*Subject is <b>@ViewData["subject"]</b>*@
+Subject is <b>@ViewBag.subject</b> @*Works the same*@
+<br />
+@*Version is <b>@ViewBag.version</b>*@
+Version is <b>@ViewData["version"]</b> @*Works the same as above line*@
+<br />
+<h5>Color list</h5>
+<ul>
+    @*@foreach(string c in ViewBag.colorList)*@
+    @foreach(string c in ViewData["colorList"] as IEnumerable<string>)
+            {
+                <li>@c</li>
+            }
+</ul>
+<br />
+Language is <b>@TempData["language"]</b> <br />
+Age is <b>@TempData["age"]</b> <br />
+Computer knowledge is <b>@TempData["computer"]</b> <br />
+
+<a href="/home/about">About</a>
+

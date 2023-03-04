@@ -1,0 +1,37 @@
+﻿@using ViewModel.Models
+@model Student
+@{
+    ViewBag.Title = "WithoutViewModel";
+    Assessment obj = ViewBag.assessmentDetails as Assessment;
+}
+
+<h2>Without View Model</h2>
+
+<hr />
+<div class="row">
+    <div class="col-sm-3">
+        <label>Roll No: @Model.Rollno</label>
+    </div>
+    <div class="col-sm-9">
+        <label>Name: @Model.Name</label>
+    </div>
+</div>
+
+<table class="table" >
+    <tr>
+        <td>C#.Net</td>
+        <td>@obj.CSharpMarks</td>
+    </tr> 
+    <tr>
+        <td>MVC</td>
+        <td>@obj.MVCMarks</td>
+    </tr> 
+    <tr>
+        <td>Bootstrap</td>
+        <td>@obj.BootStrapMarks</td>
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td>@(obj.CSharpMarks + obj.MVCMarks + obj.BootStrapMarks)</td>
+    </tr>
+</table>

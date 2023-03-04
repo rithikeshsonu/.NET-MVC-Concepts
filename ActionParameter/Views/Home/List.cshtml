@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>User List</h2>
+
+<table border ="1" >
+    <tr>
+        <th>Name</th>
+        <th>Details</th>
+    </tr>
+    <tr>
+        <td>Sonu</td>
+        @*When clicked, route to home controller -> Details method*@
+        <td><a href="/home/details?id=1">Details</a></td>
+    </tr>
+    <tr>
+        <td>Hrithik</td>
+        <td><a href="/home/details?id=2">Details</a></td>
+    </tr>
+    <tr>
+        <td>Ramu</td>
+        <td><a href="/home/details?id=3">Details</a></td>
+    </tr>
+</table>
+
