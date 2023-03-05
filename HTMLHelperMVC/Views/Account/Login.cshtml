@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@*We can avoid writing lot of html if we use html helpers.*@
+@*@{
+        //Html.BeginForm();
+        //Html.BeginForm("SignIn", "Account"); //for setting post action for different route
+        //Html.BeginForm("SignIn", "Account",FormMethod.Get, new { @class = "form-horizontal" }); //For applying CSS classes, and to use c# keywords we can use '@' prior to the keyword
+        Html.BeginForm("SignIn", "Account",FormMethod.Get, new { @class = "form-horizontal", enctype = "multipart/form-data" });
+    }*@
+
+@*<input type="text" name="text"/>*@
+
+@*@{
+        Html.EndForm();
+    }*@
+@*We can achieve the above by written below snippet as well - by using 'using'*@
+@*We don't actually have to write endfrom() at all*@
+@using (Html.BeginForm("Login", "Account", FormMethod.Get, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+
+    <div class="form-group">
+        @Html.Label("Username", new { @class = "control-label col-sm-4" })
+        @Html.TextBox("username", null, new { @class = "form-control col-sm-8" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Password", new { @class = "control-label col-sm-4" })
+        @Html.Password("password", null, new { @class = "form-control col-sm-8" })
+    </div>
+    <div class="form-group">
+        <div class="checkbox col-sm-offset-4">
+            @Html.CheckBox("remember") Remember Password
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Login" class="btn btn-primary col-sm-offset-4" />
+    </div>
+}
