@@ -18,5 +18,14 @@ namespace ViewModel.Controllers
 
             return View(Sobj);
         }
+        public ViewResult WithViewModel()
+        {
+            Student Sobj = new Student() { Rollno = 3, Name = "Priya" };
+            Assessment aObj = new Assessment() { CSharpMarks = 30, MVCMarks = 40, BootStrapMarks = 50 };
+            Marksheet mObj = new Marksheet();
+            mObj.MyStudent = Sobj;
+            mObj.MyAssessment = aObj;
+            return View(mObj);
+        }
     }
 }
